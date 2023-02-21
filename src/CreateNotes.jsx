@@ -8,6 +8,15 @@ const CreateNote = (props) => {
     content: "",
   });
 
+  const [showItem,setshowItem] = useState(false)
+
+  const Showitem =()=>{
+    setshowItem(true)
+  }
+  const HideItem = ()=>{
+    setshowItem(false)
+  }
+
   const userValue = (event) => {
     const { value, name } = event.target;
     setnote((preData)=>{
@@ -32,14 +41,14 @@ const CreateNote = (props) => {
     <>
       <div className="main-note">
         <form className="form">
-          <input
+          {showItem? <input
             type={"text"}
             value={note.title}
             name="title"
             className="form-input"
             onChange={userValue}
             placeholder={"Title"}
-          />
+          /> : null}
           <br />
           <textarea
             type={"text"}
@@ -50,6 +59,8 @@ const CreateNote = (props) => {
             cols=""
             rows=""
             placeholder="write a notes..."
+            onClick={Showitem}
+            onDoubleClick={HideItem}
           ></textarea>
           <Button className="btn" onClick={addEvent}>
             <AddIcon />

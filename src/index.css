@@ -57,17 +57,22 @@ body{
 
 .btn{
   float: right;
+  margin-bottom: 10px;
   border-radius: 50px;
   background-color: yellow;
 }
 
 .note{
+  display: inline-block;
   border-radius: 10px;
   padding:1rem;
   /* text-align: center; */
   width: 250px;
-  height: 150px;
+  min-height: 150px;
+  max-height: 300px;
   box-shadow:  5px 5px 4px gray, -3px -3px 20px gray;
-  margin:2rem ;
+  margin:2rem;
   text-transform: capitalize;
+  overflow: scroll; 
 }
+

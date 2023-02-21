@@ -25,7 +25,7 @@ const App = () => {
     <>
       <Header />
       <CreateNote passEvent={addnote}/>
-      {additem.map((value, index) => {
+     <div className="Note-div">{additem.map((value, index) => {
         return (
           <Note
             id={index}
@@ -36,6 +36,7 @@ const App = () => {
           />
         );
       })}
+      </div> 
       <Footers />
     </>
   );
